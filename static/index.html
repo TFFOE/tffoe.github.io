@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nginx HW</title>
+</head>
+<body>
+<div style="padding: 30px; display: flex; justify-content: space-between; font-size: 40px; font-weight: bold; color: darkblue">
+    <div>Response from fastify: </div>
+    <div id="response" style="color: darkgoldenrod">waiting for response...</div>
+</div>
+
+<script>
+  xhr = new XMLHttpRequest()
+  xhr.open('GET', 'http://localhost:3000', true)
+  xhr.onload = () => {
+    console.log(xhr.response)
+    let elem = document.getElementById('response')
+    elem.innerText = xhr.response
+  }
+  xhr.onerror = () => {
+    console.log('Error')
+  }
+  xhr.send()
+</script>
+</body>
+</html>
