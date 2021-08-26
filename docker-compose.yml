@@ -6,8 +6,8 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./static/index.html:/data/www/index.html
-      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./packages/fastify-app/static/index.html:/data/www/index.html
+      - ./packages/fastify-app/nginx.conf:/etc/nginx/nginx.conf
     depends_on:
       - server
 
@@ -23,3 +23,4 @@ services:
       - "3000:3000"
     environment:
       MODE: DEV
+      PORT: 3000
