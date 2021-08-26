@@ -1,12 +1,14 @@
-const fastify = require('fastify')({ logger: true })
+import fastify from "fastify";
 
-fastify.register(require('fastify-cors'), {})
+const server = fastify({logger: true})
 
-fastify.get('/', async (request, response) => ({ hello: 'world' }))
+server.register(require('fastify-cors'), {})
 
-fastify.listen(3000, (err, address) => {
+server.get('/', async (request, response) => ({ hello: 'world' }))
+
+server.listen(3000, (err, address) => {
   if (err) {
-    fastify.log.error(err)
+    server.log.error(err)
     process.exit(1)
   }
 })
