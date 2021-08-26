@@ -11,17 +11,14 @@
 </div>
 
 <script>
-  xhr = new XMLHttpRequest()
-  xhr.open('GET', 'http://localhost:3000', true)
-  xhr.onload = () => {
-    console.log(xhr.response)
     let elem = document.getElementById('response')
-    elem.innerText = xhr.response
-  }
-  xhr.onerror = () => {
-    console.log('Error')
-  }
-  xhr.send()
+    getResponseText().then(data => elem.innerText = data)
+
+    async function getResponseText() {
+      const response = await fetch('http://localhost:3000')
+      return await response.text()
+    }
+
 </script>
 </body>
 </html>
