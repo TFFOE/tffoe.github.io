@@ -1193,6 +1193,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@packages/fastify-app@workspace:packages/fastify-app":
+  version: 0.0.0-use.local
+  resolution: "@packages/fastify-app@workspace:packages/fastify-app"
+  dependencies:
+    fastify: ^3.20.2
+    fastify-cors: ^6.0.2
+    typescript: ^4.3.5
+  languageName: unknown
+  linkType: soft
+
 "@semantic-release/commit-analyzer@npm:^8.0.1":
   version: 8.0.1
   resolution: "@semantic-release/commit-analyzer@npm:8.0.1"
@@ -4577,15 +4587,6 @@ __metadata:
   checksum: be8a07f342817e80c37286509355f91170bd89be9c1df9512ba0c5a61ce20ccf9bdae42ccf65e1fa3834734c78fc524121f709303ebbb97d22df3cb03ff9d7a5
   languageName: node
   linkType: hard
-
-"fastify-app@workspace:fastify-app":
-  version: 0.0.0-use.local
-  resolution: "fastify-app@workspace:fastify-app"
-  dependencies:
-    fastify: ^3.20.2
-    fastify-cors: ^6.0.2
-  languageName: unknown
-  linkType: soft
 
 "fastify-cors@npm:^6.0.2":
   version: 6.0.2
