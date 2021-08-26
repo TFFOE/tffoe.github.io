@@ -1,0 +1,13 @@
+{
+  "name": "fastify-app",
+  "version": "0.0.0",
+  "dependencies": {
+    "fastify": "^3.20.2",
+    "fastify-cors": "^6.0.2"
+  },
+  "scripts": {
+    "build": "tsc server.ts --outdir dist",
+    "start": "node dist/server.js",
+    "docker-start": "docker-compose up"
+  }
+}

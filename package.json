@@ -1,16 +1,12 @@
 {
-  "name": "docker-nginx-hw",
+  "name": "tffoe.github.io",
   "version": "0.0.0",
   "devDependencies": {
-    "fastify": "^3.20.1",
+    "@atls/actl-cli": "^0.4.48",
     "typescript": "^4.3.5"
   },
-  "dependencies": {
-    "@atls/actl-cli": "^0.4.48",
-    "fastify-cors": "^6.0.2"
-  },
-  "scripts": {
-    "start-app": "tsc server.ts --outdir dist/ && node dist/server.js"
-  },
+  "workspaces": [
+    "fastify-app"
+  ],
   "packageManager": "yarn@3.0.0-rc.5"
 }
