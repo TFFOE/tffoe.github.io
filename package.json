@@ -11,5 +11,6 @@
   },
   "scripts": {
     "start-app": "tsc server.ts --outdir dist/ && node dist/server.js"
-  }
+  },
+  "packageManager": "yarn@3.0.0-rc.5"
 }
