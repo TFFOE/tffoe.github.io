@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nginx HW</title>
+</head>
+<body>
+<div style="padding: 30px; display: flex; justify-content: space-between; font-size: 40px; font-weight: bold; color: darkblue">
+    <div>Response from fastify: </div>
+    <div id="response" style="color: darkgoldenrod">waiting for response...</div>
+</div>
+
+<script>
+    async function getResponseText() {
+    const response = await fetch('http://127.0.0.1:3000')
+    return await response.text()
+    }
+
+    let elem = document.getElementById('response')
+    getResponseText().then(data => elem.innerText = data)
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "tffoe.github.io",
+  "license": "BSD 3-Clause",
+  "devDependencies": {
+    "@atls/actl-cli": "^0.4.48",
+    "typescript": "^4.3.5"
+  },
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}
