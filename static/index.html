@@ -11,14 +11,13 @@
 </div>
 
 <script>
-    let elem = document.getElementById('response')
-    getResponseText().then(data => elem.innerText = data)
-
     async function getResponseText() {
-      const response = await fetch('http://localhost:3000')
-      return await response.text()
+    const response = await fetch('http://localhost:3000')
+    return await response.text()
     }
 
+    let elem = document.getElementById('response')
+    getResponseText().then(data => elem.innerText = data)
 </script>
 </body>
 </html>
