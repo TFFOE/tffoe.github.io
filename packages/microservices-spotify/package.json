@@ -6,7 +6,7 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "start_db": "docker-compose up",
+    "start-db": "docker-compose up -d",
     "prebuild": "rimraf dist",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
@@ -35,6 +35,7 @@
     "apollo-server-core": "^3.3.0",
     "apollo-server-fastify": "^3.3.0",
     "axios": "^0.21.4",
+    "class-transformer": "^0.4.0",
     "fastify": "^3.20.2",
     "fastify-static": "^4.2.3",
     "graphql": "^15.5.3",
