@@ -11,15 +11,15 @@ import { ArtistModule } from './artist/artist.module';
 @Module({
   imports: [
     SpotifyApiModule,
+    DatabaseModule,
+    ArtistModule,
     ConfigModule.forRoot({
       isGlobal: true
     }),
-    DatabaseModule,
     // GraphQLModule.forRoot({
     //   typePaths: ['./**/*.graphql'],
     //   playground: true
     // }),
-    ArtistModule,
   ],
   controllers: [AppController],
   providers: [AppService],

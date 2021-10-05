@@ -2,7 +2,6 @@ import {Injectable} from '@nestjs/common';
 import {InjectRepository} from "@nestjs/typeorm";
 import {ArtistEntity} from "./entity/artist.entity";
 import {Repository} from "typeorm";
-import {Artist} from "../../dist/database/artist.entity";
 
 @Injectable()
 export class DatabaseService {
@@ -11,8 +10,8 @@ export class DatabaseService {
     private artistRepository: Repository<ArtistEntity>
   ) {}
 
-  async getArtist(): Promise<ArtistEntity> {
-    return await this.artistRepository.findOne(9)
+  async getArtist(id: string): Promise<ArtistEntity> {
+    return await this.artistRepository.findOne(id)
   }
 
   async createArtist(artistEntity: ArtistEntity): Promise<ArtistEntity> {

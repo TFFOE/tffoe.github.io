@@ -4,18 +4,14 @@ import {CreateArtistDto} from "./dto/createArtist.dto";
 
 @Injectable()
 export class SpotifyApiService {
+
   async getArtist(): Promise<CreateArtistDto> {
     const url = 'artists/' + process.env.ARTIST_ID.toString()
     return this.request(url)
       .then(response => new CreateArtistDto(response))
   }
 
-  async index(): Promise<string> {
-    return this.request('me')
-  }
-
-  private async request(relative_url: string, params: Record<string, string> = {}, method: Method = 'get') {
-    const old = Date.now()
+  private async request(relative_url: string, params: Record<string, string> = {}, method: Method = 'get'): Promise<Object> {
     const url = `https://api.spotify.com/v1/${relative_url}`
     return this.getAccessToken().then((token) => {
       const headers = {
@@ -29,7 +25,6 @@ export class SpotifyApiService {
       })
         .then(
           response => {
-            console.log(`Spotify request time... ${Date.now() - old}ms`)
             return response.data
           },
           error => {
@@ -38,7 +33,7 @@ export class SpotifyApiService {
     })
   }
 
-  private async getAccessToken() {
+  private async getAccessToken(): Promise<Object> {
     const url = 'https://accounts.spotify.com/api/token'
     const headers = {
       Authorization: process.env.AUTH_ENCODED
