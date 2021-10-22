@@ -1,12 +1,6 @@
 syntax = "proto3";
 
 message Release {
-
-  message Artist {
-    string name = 1;
-    string url = 2;
-  }
-
   message Photo {
     int32 width = 1;
     int32 height = 2;
@@ -17,6 +11,5 @@ message Release {
   string title = 2;
   string publication_date = 3;
   string description = 4;
-  Artist artist = 5;
-  Photo photo = 6;
+  Photo photo = 5;
 }
