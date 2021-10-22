@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+import "release.proto";
+
+service ReleaseService {
+  rpc GetRelease (GetReleaseRequest) returns (GetReleaseResponse) {}
+  rpc ListReleases (ListReleasesRequest) returns (ListReleasesResponse) {}
+}
+
+message GetReleaseRequest {
+  int32 id = 1;
+}
+
+message GetReleaseResponse {
+  Release release = 1;
+}
+
+message ListReleasesRequest {
+  message Pager {
+    int32 offset = 1;
+    int32 take = 2;
+  }
+
+  enum OrderDirection {
+    ASC = 0;
+    DESC = 1;
+  }
+
+  message Order {
+    string field = 1;
+    OrderDirection direction = 2;
+  }
+
+  Pager pager = 1;
+  Order order = 2;
+}
+
+message ListReleasesResponse {
+  repeated Release releases = 1;
+  bool has_next_page = 2;
+}

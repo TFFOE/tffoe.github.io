@@ -9,10 +9,10 @@ export class ArtistService {
     private spotifyService: SpotifyApiService,
     private databaseService: DatabaseService
   ) {}
-
+Promise
   async getArtist(): Promise<ArtistEntity> {
     const artistFromDatabase = await this.databaseService.getArtist(process.env.ARTIST_ID.toString())
-    if (JSON.stringify(artistFromDatabase) !== JSON.stringify({})) {
+    if (artistFromDatabase !== undefined && JSON.stringify(artistFromDatabase) !== JSON.stringify({})) {
       return artistFromDatabase
     }
 
