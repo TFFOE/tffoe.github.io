@@ -21,12 +21,12 @@ import {ConfigModule} from "@nestjs/config";
       synchronize: true,
       autoLoadEntities: true,
     }),
-    // TypeOrmModule.forRoot({
-    //   type: 'mongodb',
-    //   host: process.env.MONGO_HOST,
-    //   database: process.env.MONGO_DB,
-    //   synchronize: true,
-    // })
+    TypeOrmModule.forRoot({
+      type: 'mongodb',
+      host: process.env.MONGO_HOST,
+      database: process.env.MONGO_DB,
+      synchronize: true,
+    })
   ],
   providers: [DatabaseService]
 })
