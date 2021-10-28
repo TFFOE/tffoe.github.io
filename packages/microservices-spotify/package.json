@@ -1,0 +1,44 @@
+{
+  "name": "@packages/microservices-spotify",
+  "version": "0.0.0",
+  "description": "",
+  "author": "",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "start-db": "docker-compose up -d",
+    "build": "nest build",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch"
+  },
+  "workspaces": [
+    "protos/*"
+  ],
+  "dependencies": {
+    "@nestjs/axios": "^0.0.1",
+    "@nestjs/common": "^8.0.0",
+    "@nestjs/config": "^1.0.1",
+    "@nestjs/core": "^8.0.0",
+    "@nestjs/graphql": "^9.0.4",
+    "@nestjs/microservices": "^8.0.10",
+    "@nestjs/typeorm": "^8.0.2",
+    "@types/mongodb": "^4.0.7",
+    "apollo-server-core": "^3.3.0",
+    "axios": "^0.21.4",
+    "class-transformer": "^0.4.0",
+    "graphql": "^15.5.3",
+    "mongodb": "^4.1.2",
+    "pg": "^8.7.1",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.2.0",
+    "source-map-support": "^0.5.19",
+    "typeorm": "^0.2.37"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^8.0.0",
+    "@types/pg": "^8",
+    "@types/source-map-support": "^0",
+    "typescript": "^4.3.5"
+  }
+}
