@@ -16,10 +16,10 @@ import { ArtistModule } from './artist/artist.module';
     ConfigModule.forRoot({
       isGlobal: true
     }),
-    // GraphQLModule.forRoot({
-    //   typePaths: ['./**/*.graphql'],
-    //   playground: true
-    // }),
+    GraphQLModule.forRoot({
+      typePaths: ['./**/*.graphql'],
+      playground: true
+    }),
   ],
   controllers: [AppController],
   providers: [AppService],
